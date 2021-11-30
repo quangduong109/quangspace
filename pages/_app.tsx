@@ -40,6 +40,8 @@ import { bootstrap } from 'lib/bootstrap-client'
 import { fathomId, fathomConfig } from 'lib/config'
 import * as Fathom from 'fathom-client'
 
+import * as ga from '../lib/gtag'
+
 if (typeof window !== 'undefined') {
   bootstrap()
 }
@@ -48,10 +50,12 @@ export default function App({ Component, pageProps }) {
   const router = useRouter()
 
   React.useEffect(() => {
+    
     if (fathomId) {
       Fathom.load(fathomId, fathomConfig)
 
-      function onRouteChangeComplete() {
+      function onRouteChangeComplete(url) {
+        ga.pageview(url)
         Fathom.trackPageview()
       }
 
@@ -61,7 +65,7 @@ export default function App({ Component, pageProps }) {
         router.events.off('routeChangeComplete', onRouteChangeComplete)
       }
     }
-  }, [])
+  }, [router.events])
 
   return <Component {...pageProps} />
 }

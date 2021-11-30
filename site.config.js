@@ -43,9 +43,10 @@ module.exports = {
   // any pages defined here will override their default URL paths
   // example:
   //
-  pageUrlOverrides: {
-    '/tools-libs-frameworks': '176f43455c6d44cc9461f42ee67ed5e9',
-    '/health': 'b0fc746a9b5b42738bd2af16011b5d80'
-  }
-  // pageUrlOverrides: null
+  // pageUrlOverrides: {
+  //   '/tools-libs-frameworks': '176f43455c6d44cc9461f42ee67ed5e9',
+  //   '/health': 'b0fc746a9b5b42738bd2af16011b5d80'
+  // }
+  
+  pageUrlOverrides: null
 }
