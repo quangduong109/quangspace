@@ -8,7 +8,7 @@ module.exports = {
 
   // basic site info (required)
   name: 'Quang Space',
-  domain: 'quangspace.me',
+  domain: 'www.quangspace.me',
   author: 'Quang Duong',
 
   // open graph metadata (optional)
